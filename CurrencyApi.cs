@@ -14,7 +14,7 @@ namespace Az.CurrencyApi
     {
         [Function("CurrencyApi")]
         public static async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req,
-            [TableInput("Currency", "1", Take = 100)] TableData[] currency,
+            [TableInput("Currency", "1", Take = 60)] TableData[] currency,
             FunctionContext executionContext)
         {
             var logger = executionContext.GetLogger("CurrencyApi");
